@@ -5,17 +5,22 @@ class Game
   end
 
   def make_guess
-    guess = gets.chomp
-    puts "You guessed '#{guess}'"
+    if @tries > 0
+      guess = gets.chomp
+      puts "You guessed '#{guess}'"
 
-    correct = @colors.include? guess
+      correct = @colors.include? guess
 
-    if correct
-      puts "Correct!"
-    else
-      @tries -= 1
-      puts "Sorry you have #{@tries} guesses left. Try again."
-      make_guess
+      if correct
+        puts "Correct!"
+        make_guess
+      else
+        @tries -= 1
+        puts "Sorry you have #{@tries} guesses left. Try again."
+        make_guess
+        end
+      else
+        puts "Game Over. Better luck next time!"
       end
     end
 
