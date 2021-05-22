@@ -1,4 +1,4 @@
-require "./lib/game"
+require "./game"
 
 class Menu
 
@@ -21,4 +21,13 @@ class Menu
 
     def instructions
       puts "You are the 'Decoder'. Your job is to guess the combination of colors
-in under 10 tries. You will get a hint after every guess and the game
+in under 10 tries. You will get a hint after every guess and the game continues until
+you run out of tries."
+    puts "Good Luck!"
+    puts "Press (b) to return to menu."
+
+  end
+end
+
+game = Menu.new
+game.get_input "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"

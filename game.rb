@@ -1,12 +1,24 @@
 class Game
   def initialize
-    @colors = ["r", "g", "b", "y"].sample.downcase(4)
+    @colors = ["r", "g", "b", "y"].sample(4)
+    @tries = 10
   end
 
   def make_guess
     guess = gets.chomp
     puts "You guessed '#{guess}'"
-  end
+
+    correct = @colors.include? guess
+
+    if correct
+      puts "Correct!"
+    else
+      @tries -= 1
+      puts "Sorry you have #{@tries} guesses left. Try again."
+      make_guess
+      end
+    end
+
 
   def begin
 
