@@ -4,7 +4,7 @@ class Menu
 
   def get_input(message)
   puts message
-    @input = gets.chomp
+  @input = gets.chomp
     if @input == "i"
       instructions
 
@@ -25,6 +25,7 @@ in under 10 tries. You will get a hint after every guess and the game continues 
 you run out of tries."
     puts "Good Luck!"
     puts "Press (b) to return to menu."
+
 
   end
 end

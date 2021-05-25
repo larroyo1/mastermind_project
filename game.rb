@@ -1,7 +1,10 @@
+#index guesses and @colors to have correct placement
+
 class Game
   def initialize
-    @colors = ["r", "g", "b", "y"].sample(4)
+    @colors = ["r", "g", "b", "y"].flat_map {|x| [x] * 4}.sample(4) #flat_map returns new array with results of following code block for each value.
     @tries = 10
+    @correct_guesses = []
   end
 
   def make_guess
@@ -10,19 +13,19 @@ class Game
       puts "You guessed '#{guess}'"
 
       correct = @colors.include? guess
-
       if correct
         puts "Correct!"
+        @correct_guesses << guess
         make_guess
       else
         @tries -= 1
         puts "Sorry you have #{@tries} guesses left. Try again."
         make_guess
-        end
-      else
-        puts "Game Over. Better luck next time!"
       end
+    else
+      puts "Game Over. Better luck next time!"
     end
+  end
 
 
   def begin
