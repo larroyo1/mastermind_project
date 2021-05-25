@@ -23,7 +23,7 @@ class Menu
       puts "You are the 'Decoder'. Your job is to guess the combination of colors
 in under 10 tries. You will get a hint after every guess and the game continues until
 you run out of tries."
-    puts "Good Luck!"
+    puts "Good Luck!!"
     puts "Press (b) to return to menu."
 
 

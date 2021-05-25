@@ -1,5 +1,5 @@
-#index guesses and @colors to have correct placement
-
+#index guesses and @colors to have correct placement.
+#fix code to allow multi-character guesses
 class Game
   def initialize
     @colors = ["r", "g", "b", "y"].flat_map {|x| [x] * 4}.sample(4) #flat_map returns new array with results of following code block for each value.
